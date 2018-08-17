@@ -1,4 +1,4 @@
-package madsbogeskov.apps.reactivereducerdemo
+package nestsuj.apps.reactivereducerdemo
 
 import org.junit.Test
 

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/projectsFragment">
+
+    <navigation android:id="@+id/authenticationGraph"
+        app:startDestination="@id/loginFragment">
+        <fragment
+            android:id="@+id/loginFragment"
+            android:name="nestsuj.apps.reactivereducerdemo.controllers.LoginFragment"
+            android:label="fragment_login"
+            tools:layout="@layout/fragment_login" />
+    </navigation>
+    <fragment
+        android:id="@+id/projectsFragment"
+        android:name="nestsuj.apps.reactivereducerdemo.controllers.ProjectsFragment"
+        android:label="fragment_projects"
+        tools:layout="@layout/fragment_projects" >
+        <action
+            android:id="@+id/action_projectsFragment_to_projectDetailsFragment"
+            app:destination="@id/todosFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/filtersFragment"
+        android:name="nestsuj.apps.reactivereducerdemo.controllers.FiltersFragment"
+        android:label="fragment_filters"
+        tools:layout="@layout/fragment_filters" />
+    <action
+        android:id="@+id/action_global_authenticationGraph"
+        app:destination="@id/authenticationGraph"
+        app:enterAnim="@anim/slide_in_bottom"
+        app:exitAnim="@anim/slide_out_bottom"
+        app:launchSingleTop="true"
+        app:popEnterAnim="@anim/slide_in_bottom"
+        app:popExitAnim="@anim/slide_out_bottom" />
+    <fragment
+        android:id="@+id/todosFragment"
+        android:name="nestsuj.apps.reactivereducerdemo.controllers.TodosFragment"
+        android:label="fragment_project_details"
+        tools:layout="@layout/fragment_todo_items" >
+        <argument
+            android:name="projectId"
+            app:argType="integer" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_projectsFragment"
+        app:destination="@id/projectsFragment"
+        app:enterAnim="@anim/slide_in_bottom"
+        app:exitAnim="@anim/slide_out_bottom"
+        app:launchSingleTop="true"
+        app:popEnterAnim="@anim/slide_in_bottom"
+        app:popExitAnim="@anim/slide_out_bottom"
+        app:popUpTo="@+id/nav_graph"
+        app:popUpToInclusive="true" />
+    <action
+        android:id="@+id/action_global_filtersFragment"
+        app:destination="@id/filtersFragment"
+        app:enterAnim="@anim/slide_in_bottom"
+        app:exitAnim="@anim/slide_out_bottom"
+        app:launchSingleTop="true"
+        app:popEnterAnim="@anim/slide_in_bottom"
+        app:popExitAnim="@anim/slide_out_bottom"
+        app:popUpTo="@+id/nav_graph"
+        app:popUpToInclusive="true" />
+</navigation>

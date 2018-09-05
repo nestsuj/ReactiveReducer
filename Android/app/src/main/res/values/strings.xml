@@ -1,3 +1,21 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Reactive Reducer Demo</string>
+
+    <string name="projects">Projects</string>
+    <string name="filters">Filters</string>
+    <string name="hello_from_filters">Hello from filters!</string>
+    <string name="login">Login</string>
+    <string name="label_username">Username</string>
+    <string name="label_password">password</string>
+    <string name="logout">Logout</string>
+    <string name="display_authentication_error">Failed login of user "<xliff:g id="username">{username}</xliff:g>". <xliff:g id="username">{errorMessage}</xliff:g>!</string>
+    <string name="login_as_auric">Login as Auric</string>
+    <string name="projects_title">Projects</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_from_project_details_fragment">Hello from Project Details Fragment</string>
+    <string name="todos_title">Todos</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
